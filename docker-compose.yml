@@ -1,0 +1,36 @@
+services:
+  app:
+    build: .
+    environment:
+      CONFIG_ENV: ${CONFIG_ENV}
+      SESSION_SECRET_KEY: ${SESSION_SECRET_KEY}
+      NODE_TLS_REJECT_UNAUTHORIZED: ${NODE_TLS_REJECT_UNAUTHORIZED}
+      PG_WRITE_CONNECTION_STRING: ${PG_WRITE_CONNECTION_STRING}
+      PG_READ_CONNECTION_STRING: ${PG_READ_CONNECTION_STRING}
+      HTTP_PORT: ${HTTP_PORT}
+      HTTP_HOST: ${HTTP_HOST}
+      LOG_LEVEL: ${LOG_LEVEL}
+      REDIS_HOST: ${REDIS_HOST}
+      REDIS_PORT: ${REDIS_PORT}
+    depends_on:
+      - db
+      - redis
+    container_name: app
+    ports:
+      - "8080:8080"
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    container_name: db
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis
+    restart: always
+    container_name: redis
+    ports:
+      - "6379:6379"
