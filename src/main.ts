@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import path from 'path';
 
 import { ValidationPipe, VersioningType } from '@nestjs/common';
