@@ -1,8 +1,8 @@
 import { DynamicModule, Module } from '@nestjs/common';
 
-import { UsersModule } from 'notes/users.module';
-
 import { AppController } from './app.controller';
+import { AuthModule } from './auth/auth.module';
+import { UserModule } from './user/user.module';
 
 @Module({})
 export class AppModule {
@@ -17,7 +17,8 @@ export class AppModule {
       providers: [],
       imports: [
         InfrastructureModule,
-        UsersModule,
+        UserModule,
+        AuthModule,
       ],
     };
   }

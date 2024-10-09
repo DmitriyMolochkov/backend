@@ -3,7 +3,7 @@ import { PassportModule } from '@nestjs/passport';
 
 import { BullBoardAuthController } from './bull-board-auth.controller';
 import { BullBoardAuthService } from './bull-board-auth.service';
-import { LocalStrategy } from './local.startegy';
+// import { LocalStrategy } from './local.startegy';
 import { SessionSerializer } from './session.serializer';
 
 @Module({
@@ -11,7 +11,7 @@ import { SessionSerializer } from './session.serializer';
   controllers: [BullBoardAuthController],
   providers: [
     BullBoardAuthService,
-    LocalStrategy,
+    // LocalStrategy,
     SessionSerializer,
   ],
 })

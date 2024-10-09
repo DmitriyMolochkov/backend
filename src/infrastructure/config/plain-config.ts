@@ -1,3 +1,5 @@
+import * as process from 'node:process';
+
 import { Config } from './config';
 import { Environment, LogLevel, RedisConnectionName } from './enums';
 
@@ -28,5 +30,12 @@ export const plainConfig: Config = {
       host: process.env.REDIS_HOST ?? 'localhost',
       port: Number(process.env.REDIS_PORT ?? '6379'),
     },
+  },
+  ethereumContract: {
+    nodeWssUrl: process.env.ETHEREUM_CONTRACT_NOSE_WSS_URL,
+    contractAddress: process.env.ETHEREUM_CONTRACT_ADDRESS,
+    ownerAddress: process.env.ETHEREUM_CONTRACT_OWNER_WALLET,
+    ownerPrivateKey: process.env.ETHEREUM_CONTRACT_OWNER_PRIVATE_KEY,
+    startBlockNumber: Number(process.env.ETHEREUM_CONTRACT_START_BLOCK_NUMBER),
   },
 };

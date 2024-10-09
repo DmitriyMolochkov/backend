@@ -1,10 +1,4 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { PassportStrategy } from '@nestjs/passport';
-import { Strategy } from 'passport-local';
-
-import { BullBoardAuthService } from './bull-board-auth.service';
-
-@Injectable()
+/* @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {
   public constructor(private readonly authService: BullBoardAuthService) {
     super();
@@ -22,4 +16,4 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
 
     return { username };
   }
-}
+} */

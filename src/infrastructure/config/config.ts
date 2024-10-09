@@ -9,6 +9,7 @@ import {
 import { Environment } from './enums';
 import {
   BullBoardConfig,
+  EthereumContractConfig,
   HttpConfig,
   LoggerConfig,
   PgConfig,
@@ -47,4 +48,9 @@ export class Config {
   @IsDefined()
   @ValidateNested()
   public readonly bullBoard!: BullBoardConfig;
+
+  @Type(() => EthereumContractConfig)
+  @IsDefined()
+  @ValidateNested()
+  public readonly ethereumContract!: EthereumContractConfig;
 }
