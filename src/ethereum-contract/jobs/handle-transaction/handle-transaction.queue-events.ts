@@ -1,6 +1,7 @@
-import { BaseJobQueueEvents, buildQueueEventOptions } from '@kokos/nestjs-bullmq-wrapper';
 import { QueueEventsListener } from '@nestjs/bullmq';
 import { InjectPinoLogger, PinoLogger } from 'nestjs-pino';
+
+import { BaseJobQueueEvents, buildQueueEventOptions } from 'common/bullmq-wrapper';
 
 import { HandleTransactionQueue } from '../handle-transaction.queue';
 

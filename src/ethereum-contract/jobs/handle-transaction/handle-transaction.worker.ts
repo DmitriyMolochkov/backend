@@ -1,6 +1,7 @@
-import { BaseJobWorker, TypedQueue, buildWorkerOptions } from '@kokos/nestjs-bullmq-wrapper';
 import { InjectQueue, Processor } from '@nestjs/bullmq';
 import { InjectPinoLogger, PinoLogger } from 'nestjs-pino';
+
+import { BaseJobWorker, TypedQueue, buildWorkerOptions } from 'common/bullmq-wrapper';
 
 import { BalanceChangeService } from '../../../balance-change/balance-change.service';
 import { BalanceChangeEntity } from '../../../balance-change/entities';

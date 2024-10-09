@@ -1,4 +1,3 @@
-import { TypedQueue } from '@kokos/nestjs-bullmq-wrapper';
 import { InjectQueue } from '@nestjs/bullmq';
 import { Inject, Injectable, OnModuleInit } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -7,6 +6,8 @@ import pAll from 'p-all';
 import { IsNull, Not, Repository } from 'typeorm';
 import Web3 from 'web3';
 import { TransactionInfo } from 'web3-types/src/eth_types';
+
+import { TypedQueue } from 'common/bullmq-wrapper';
 
 import { ProcessedBlockEntity } from './entities';
 import { WEB_3_TOKEN } from './ethereum-contract.constants';

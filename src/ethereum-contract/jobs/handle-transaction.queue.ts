@@ -1,5 +1,6 @@
-import { createQueue } from '@kokos/nestjs-bullmq-wrapper';
 import { TransactionInfo } from 'web3-types/src/eth_types';
+
+import { createQueue } from 'common/bullmq-wrapper';
 
 import { BalanceChangeEntity } from '../../balance-change/entities';
 import { EthereumContractJobNameEnum } from '../enums';
